@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+}
+
+body{
+    background-color: lightseagreen; 
+}
+
+h1 {
+    
+    background-color: gray;
+    text-align: center;
+    padding: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    .Menus{
+        padding: 8px;
+        background-color:gray;
+        text-align: center;
+        }
+
+   button{
+       
+       background-color: skyblue;
+       height: 30px;
+       font-family: Verdana, Geneva, Tahoma, sans-serif;
+       font-style: italic;
+   }
+
+   p{
+       font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+   }
+
+  
+   .Redes{
+    margin-top: 300px;
+   }
+
+   tr{
+       background-color: burlywood;
+   }
+   h2{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+   }
+
+   label{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+   }
+   
+   input{
+       size: 10px;
+   }
