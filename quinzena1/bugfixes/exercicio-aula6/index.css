@@ -34,7 +34,7 @@ div>p:first-child {
 }
 
 
-}
+
 
 .botao-amarelo {
     background-color: #ffaf43;
@@ -107,7 +107,7 @@ td button {
     background-color: #fadf63;
     width: 150px;
     height: 30px;
-    border-radius: 5px;
+    border-bottom-width: 3px;
     color: black;
 }
 
