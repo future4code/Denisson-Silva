@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@600&family=Josefin+Sans&display=swap');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    
+    min-height: 100vh;
+    display:grid;
+    grid-template-rows: 60px 1fr 60px;
+    grid-template-columns: 100% 1fr;
+
+
+}
+
+header{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: crimson;
+    grid-column: 1/-1;
+    padding: 20px;
+    font-family: "Baloo Da 2", serif;
+    color: white;
+    background: #20002c;  
+    background: -webkit-linear-gradient(to right, #cbb4d4, #20002c);  
+    background: linear-gradient(to right, #cbb4d4, #20002c); 
+    
+    
+}
+
+.cards{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 20px;
+    column-gap: 20px;
+    margin: 20px;
+    background: #ADA996;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+
+
+}
+
+.card-video{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.img{
+    width: 100%;
+}
+
+footer{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: 1/-1;
+    background: #20002c;  
+    background: -webkit-linear-gradient(to right, #cbb4d4, #20002c);  
+    background: linear-gradient(to right, #cbb4d4, #20002c); 
+    text-transform: uppercase;
+    font-family: "Baloo Da 2", serif;
+    font-size: 20px;
+    
+    
+
+}
+
+
+
+
+/*Pagina de videos*/
+
+section{
+    min-height: 100vh;
+    display:grid;
+    grid-template-rows: 60px 1fr 60px;
+    font-family: "Josefin Sans", "serif";
+    text-transform: uppercase;
+    
+}
+
+.video{
+    width: 100%;
+    height: 400px;
+    
+
+}
+ 
+
+
+.card-assistir{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    background: #7F00FF;  
+    background: -webkit-linear-gradient(to right, #E100FF, #7F00FF); 
+    background: linear-gradient(to right, #E100FF, #7F00FF); 
+    
+}   
+
+
+.card-assistir h2, p{
+    padding: 10px;
+    margin-bottom: 0;
+}
+
