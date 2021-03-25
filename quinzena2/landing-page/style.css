@@ -8,11 +8,12 @@
 *{
     margin: 0;
     padding: 0;
+    list-style: none;
+    text-decoration: none;
 }
 
 
-.hamburger{
-    background-color: blue;
+.hamburguer{
     width: 2rem;
     height: 2rem;
     position: fixed;
@@ -22,14 +23,15 @@
     display:flex;
     flex-direction: column;
     justify-content: space-evenly;
+    cursor: pointer;
     
 }
 
 .line{
     width: 100%;
-    height: .1rem; 
+    height: .2rem; 
     background-color: white;
-
+    box-shadow: 0.1rem 0.1rem 1px black;
     
 }
 
@@ -64,13 +66,91 @@ header{
     }
 }
 
-/* .logo img{
+.barra-lateral{
+    width: 20rem;
+    height: 100vh;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    right: -20rem;
+    transition: all 1s;
+}
+
+.show-menu .barra-lateral{
+    right: 0;
+
+}
+
+.options{
     position: absolute;
-    top: 0%;
-    left: 60%;
-    height: 11rem;
-    opacity: 0.5;
-    border-radius: 50%;} */
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.options-item{
+    text-align: center;
+    margin-bottom: .5rem;
+}
+
+.options-link{
+    font-family: "Mulish", serif;
+    color: gray;
+    font-size: 2rem;
+
+}
+
+.options-link:hover{
+    color: tomato;
+}
+
+
+    
+
+
+.logo-menu{
+   height: 25vh;
+   width: 40w;
+   margin-left: 5rem;
+   
+}
+
+.redes-sociais{
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.redes-sociais i{
+    color: gray;
+    height: 2.5rem;
+    width: 2.5rem;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.redes-sociais i:hover{
+    color: tomato;
+}
+
+.topo{
+    position: relative;
+    
+}
+
+.logotipo{
+    height: 80vh;
+    width: 40vw;
+    position: absolute;
+    top: 19rem;
+    right: 10%;
+    
+    
+}
    
     
 
@@ -80,7 +160,7 @@ header{
 
 .capa{
     position: absolute;
-    top: 30%;
+    top: 28%;
     right: 10%;
     display: flex;
     flex-direction: column;
