@@ -12,21 +12,19 @@
     <title>Projeto 4Food</title>
 
 </head>
-<body>
+<body> 
     <div class="cont">
 
         <div class="topo">
-            <!-- <img class="logotipo" src="imagens/4food.png" alt="indisponível"> -->
             <div class="hamburguer">
                 <div class="line" id="line1"></div>
                 <div class="line" id="line2"></div>
                 <div class="line" id="line3"></div>
-            </div>        
-               
+            </div>            
         </div> 
 
         <header>
-            <div class="img">
+            <div class="img" id="Home">
                 <img src="imagens/fundo-header.jpg" alt="Não disponível">
             </div>
            
@@ -34,29 +32,36 @@
                 <h1>Deu fome? Dá um 4food!</h1>
                 <p>Coma bem sem sair de casa</p>
                 <button>Faça agora seu Pedido</button>
+                <h4>Baixe agora nosso app</h4>
+                <div class="botao-app">
+                    <button>Apple Store<i class="fab fa-app-store"></i></button>
+                    <button>Play Store<i class="fab fa-google-play"></i></button>
+                </div>
             </div>
         </header>
 
         <aside class="barra-lateral">
             <nav>
-                    <img class="logo-menu" src="imagens/logotipo.png" alt="indisponível">
-                    <ul class="options">
+                <img class="logo-menu" src="imagens/logotipo.png" alt="indisponível">
+                <ul class="options">
                         
-                        <li class="options-item"><a href="http://127.0.0.1:5500/index.html" class="options-link">Home</a></li>
-                        <li class="options-item"><a href="#" class="options-link">Produtos</a></li>
-                        <li class="options-item"><a href="#" class="options-link">Pratos Prontos</a></li>
-                        <li class="options-item"><a href="#" class="options-link">Contato</a></li>
-                        <li class="options-item"><a href="#" class="options-link"></a></li>
-                    </ul>
+                    <li class="options-item"><a href="#Home" class="options-link">Home</a></li>
+                    <li class="options-item"><a href="#Produtos" class="options-link">Produtos</a></li>
+                    <li class="options-item"><a href="#" class="options-link">Refeições</a></li>
+                    <li class="options-item"><a href="#" class="options-link">Contato</a></li>
+                    
+
+                </ul>
             </nav>
+
             <div class="redes-sociais">
-                <a href="#" ><i class="fab fa-instagram"></i></a>
-                <a href="#" ><i class="fab fa-whatsapp"></i></a>
-                <a href="#" ><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://web.whatsapp.com/" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://pt-br.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
             </div>
         </aside>
 
-        <section class="sessao-produtos">
+        <section class="sessao-produtos" id="Produtos">
             <div class="sessao-header">
                 <h1>Produtos</h1>
             </div>
@@ -66,11 +71,8 @@
                         <img  src="imagens/Cereais.jpg" alt="indisponivel">
                     </div>    
                     <div class="produto-texto">
-                        <h2>topo</h2>
-                        <h3>Cereais</h3>   
-                        <p>essa é a descrição que
-                           vai ter 2 linhas padrão 
-                        </p>
+                        <h2>Cereais</h2>   
+                        <p>Arroz, feijão e vários tipos de grãos.</p> 
                         <button>Saiba mais</button>
                     </div>
                 </div>
@@ -80,11 +82,8 @@
                         <img  src="imagens/frutas.jpg" alt="indisponivel">
                     </div>    
                     <div class="produto-texto">
-                        <h2>topo</h2>
-                        <h3>hort-fruit</h3>
-                        <p>essa é a descrição que
-                           vai ter 2 linhas padrão 
-                        </p>
+                        <h2>Hort-Fruit</h2>
+                        <p>Frutas e legumes direto do campo para sua casa.</p>
                         <button>Saiba mais</button>
                     </div>
                 </div>
@@ -94,56 +93,24 @@
                         <img  src="imagens/laticinios.jpg" alt="indisponivel">
                     </div>    
                     <div class="produto-texto">
-                        <h2>topo</h2>
-                        <h3>laticinios</h3>
-                        <p>essa é a descrição que
-                           vai ter 2 linhas padrão 
-                        </p>
+                        <h2>Laticínios</h2>
+                        <p>Leite, manteigas e derivados.</p>
                         <button>Saiba mais</button>
                     </div>
                 </div>
-
-                <!-- <div class="produto">
-                    <div class="card-img">
-                        <img  src="imagens/pães.jpg" alt="indisponivel">
-                    </div>    
-                    <div class="produto-texto">
-                        <h2>topo</h2>
-                        <h3>pães</h3>  
-                        <p>essa é a descrição que
-                           vai ter 2 linhas padrão 
-                        </p>
-                        <button>Saiba mais</button>
-                    </div>
-                </div> -->
 
                 <div class="produto">
                     <div class="card-img">
                         <img src="imagens/bebidas.jpg" alt="indisponivel">
                     </div>
                     <div class="produto-texto">
-                        <h2>topo</h2>
-                        <h3>bebidas</h3>   
-                        <p>essa é a descrição que
-                           vai ter 2 linhas padrão 
-                        </p>
+                        <h2>Bebidas</h2>   
+                        <p>Sucos, Cervejas e Refrigerantes </p>
                         <button>Saiba mais</button>
                     </div>
                 </div>
                 
-                <!-- <div class="produto">
-                    <div class="card-img">
-                        <img src="imagens/limpeza.jpg" alt="indisponivel">
-                     </div>
-                    <div class="produto-texto">
-                        <h2>topo</h2>
-                        <h3>limpeza</h3>   
-                        <p>essa é a descrição que
-                           vai ter 2 linhas padrão 
-                        </p>
-                        <button>Saiba mais</button>
-                    </div>
-                </div> -->
+               
             </div>
         </section>
     </div>

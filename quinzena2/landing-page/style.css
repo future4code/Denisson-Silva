@@ -12,6 +12,9 @@
     text-decoration: none;
 }
 
+html{
+    scroll-behavior: smooth;
+}
 
 .hamburguer{
     width: 2rem;
@@ -40,6 +43,16 @@ header{
     height: 100vh;
     overflow: hidden;
     position: relative;
+    text-align: center;
+}
+
+.botao-app{
+    display: flex;
+    font-family: "Josefin Sans", serif;
+    color: white;
+    font-size: 2rem;
+    text-shadow: .2rem .2rem  rgba( 0, 0, 0, .4);
+
 }
 
 .img{
@@ -74,6 +87,8 @@ header{
     top: 0;
     right: -20rem;
     transition: all 1s;
+    z-index: 50;
+
 }
 
 .show-menu .barra-lateral{
@@ -90,7 +105,7 @@ header{
 
 .options-item{
     text-align: center;
-    margin-bottom: .5rem;
+    margin-top: 1rem;
 }
 
 .options-link{
@@ -183,7 +198,16 @@ header{
     margin-bottom: 2rem;
 }
 
-.capa button{
+.capa h4{
+    font-family: "Josefin Sans", serif;
+    color: white;
+    font-size: 2rem;
+    text-shadow: .2rem .2rem  rgba( 0, 0, 0, .4);
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.capa>button{
     font-family: "Mulish", serif;
     color: white;
     text-transform: uppercase;
@@ -195,12 +219,51 @@ header{
     padding: 1rem 3rem;
     border-radius: 5px;
     cursor: pointer;
-    
-
 }
 
 .capa button:hover{
     color: black;
+}
+
+.botao-app h4{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    font-family: "Josefin Sans", serif;
+    flex-wrap: wrap;
+    align-items: center;
+    color: white;
+    font-size: 2rem;
+    text-shadow: .2rem .2rem  rgba( 0, 0, 0, .4);
+}
+
+.botao-app{
+    display: flex;
+    justify-content: space-around;
+}
+
+.botao-app button{
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "Mulish", serif;
+    color: white;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: .1rem;
+    background: #000000;
+    background: -webkit-linear-gradient(to right, #434343, #000000);  
+    background: linear-gradient(to right, #434343, #000000);
+    border: none;
+    padding: 1rem 3rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.botao-app i{
+    font-size: 1.9rem;
+    
 }
 
 .sessao-header{
@@ -264,23 +327,15 @@ header{
     font-size: 2rem;
     font-weight: 500;
     color: #eee;
-
-}
-
-.produto-texto h3{
-
-     font-family: "Mulish", serif;
-     font-weight: bolder;
-     color: hsl(0, 77%, 46%);
-     margin-bottom: 1.5rem;
 }
 
 .produto-texto p{
-    font-family: "Josefin Sans", serif;
-    color: #eee;
-    font-weight: 500;
+    font-family: "Baloo Da 2", serif;
+    color: hsl(0, 77%, 46%);
+    font-weight: 800;
     width: 80%;
     margin-bottom: 2rem;
+    text-transform: uppercase;
 }
 
 .produto-texto button{
@@ -302,3 +357,29 @@ header{
     opacity: 1;
     visibility: visible;
 }
+
+@media screen and (max-device-width: 376px){
+    .capa{
+    position: absolute;
+    top: 10%;
+    right: 0%;
+    display: flex;
+    flex-direction: column;
+    }
+    
+    .produtos{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .produto{
+            width: 100%;
+            height: 35rem;
+    }
+
+
+
+}
+
+
