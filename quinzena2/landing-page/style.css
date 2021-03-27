@@ -202,3 +202,103 @@ header{
 .capa button:hover{
     color: black;
 }
+
+.sessao-header{
+    text-align: center;
+    padding: 1rem;
+}
+
+.sessao-header h1{
+    color: gray;
+    font-size: 3.5rem;
+    font-family: "Baloo Da 2", serif;
+    
+}
+
+.produtos{
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.produto{
+    width: 23%;
+    height: 35rem;
+    position: relative;
+}
+
+.card-img{
+    width: 100%;
+    height: 100%;
+    background-color: gray;
+    border-radius: .5rem;
+    
+}
+
+.card-img img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: .5rem;
+    opacity: .8;
+    transition: opacity .3s;
+}
+
+.produto:hover .card-img img{
+    opacity: .5;
+}
+
+.produto-texto{
+    position: absolute;
+    bottom: 0;
+    padding: 2rem;
+    text-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, -4);
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s;
+
+}
+
+.produto-texto h2{
+    font-family: "Baloo Da 2", serif;
+    font-size: 2rem;
+    font-weight: 500;
+    color: #eee;
+
+}
+
+.produto-texto h3{
+
+     font-family: "Mulish", serif;
+     font-weight: bolder;
+     color: hsl(0, 77%, 46%);
+     margin-bottom: 1.5rem;
+}
+
+.produto-texto p{
+    font-family: "Josefin Sans", serif;
+    color: #eee;
+    font-weight: 500;
+    width: 80%;
+    margin-bottom: 2rem;
+}
+
+.produto-texto button{
+    width: 8rem;
+    height: 2.5rem;
+    background: #e52d27;  
+    background: -webkit-linear-gradient(to right, #b31217, #e52d27);  
+    background: linear-gradient(to right, #b31217, #e52d27); 
+    font-family: "Mulish", serif;
+    font-size: 1rem;
+    color: #eee;
+    border-radius: 0.5rem;
+    border: none;
+    box-shadow: 0 .1rem .8rem rgba(0, 0, 0 .4);
+}
+
+.produto:hover .produto-texto{
+    bottom: 2rem;
+    opacity: 1;
+    visibility: visible;
+}
