@@ -23,7 +23,13 @@ function retornaNumerosParesElevadosADois (array) {
 //Exercício 3
 
 function retornaNumerosPares (array) {
-   // implemente sua lógica aqui
+   array [0, 8, 23, 16, 10, 15, 41, 12, 13]
+   let divisiveisPorDois = []
+   for(i of array){
+      if(array[i] % 2 === 0){
+         divisiveisPorDois.push(array[i])
+      }
+   } return divisiveisPorDois
 }
 
 //Exercício 4
