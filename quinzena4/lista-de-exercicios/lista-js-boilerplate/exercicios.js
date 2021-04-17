@@ -48,7 +48,10 @@ function retornaMaiorNumero(array) {
 //Exercício 5
 
 function retornaQuantidadeElementos (array) {
-   // implemente sua lógica aqui
+   array [0, 8, 23, 16, 10, 15, 41, 12, 13]
+   let totalDeElementos = array.length
+   return totalDeElementos
+   
 }
 
 //Exercício 6
