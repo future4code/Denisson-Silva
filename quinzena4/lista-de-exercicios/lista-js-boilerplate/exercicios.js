@@ -51,13 +51,17 @@ function retornaQuantidadeElementos (array) {
    array [0, 8, 23, 16, 10, 15, 41, 12, 13]
    let totalDeElementos = array.length
    return totalDeElementos
-   
 }
 
 //Exercício 6
 
 function retornaExpressoesBooleanas() {
-   // implemente sua lógica aqui
+ arrayBoleano
+ const booleano1 = true
+ const booleano2 = false
+ const booleano3 = !booleano2 
+ const booleano4 = !booleano3 
+ 
 }
 
 //Exercício 7
