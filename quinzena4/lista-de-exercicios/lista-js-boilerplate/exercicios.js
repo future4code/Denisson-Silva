@@ -56,66 +56,139 @@ function retornaQuantidadeElementos (array) {
 //Exercício 6
 
 function retornaExpressoesBooleanas() {
- arrayBoleano
+ 
  const booleano1 = true
  const booleano2 = false
  const booleano3 = !booleano2 
  const booleano4 = !booleano3 
+ return[false, false, true, true, true]
  
 }
 
 //Exercício 7
 
 function retornaNNumerosPares(n) {
-   // implemente sua lógica aqui
+  let arrayPares = []
+  for( let index = 0; arrayPares.length < n; index++){
+   if(index % 2 === 0){
+      arrayPares.push(index)
+   }
+}
+  return arrayPares
 }
 
 // Exercício 8
 
 function checaTriangulo(a, b, c) {
-  // implemente sua lógica aqui
+  let tipoTriangulo
+  if((a === b) && (b === c) ){
+     tipoTriangulo = "Equilátero"
+  }
+  else if((a === b || a === c) && (b === c || b === a )){
+     tipoTriangulo = "Isósceles"
+  }
+  else if((a !== b) && (b !== c) ){
+   tipoTriangulo = "Escaleno"
+}   return tipoTriangulo
 }
 
 // Exercício 9
 
 function comparaDoisNumeros(num1, num2) {
-   // implemente sua lógica aqui
+   let maiorNumero 
+   let menornumero 
+   let maiorDivisivelporMenor
+   let diferenca
+   //esse codigo checa o maior numero
+   if(num1 > num2){
+      maiorNumero = num1
+      menornumero = num2
+   }
+   else{
+      maiorNumero = num2
+      menornumero = num1
+   }
+   //esse codigo verifica se o maior é divisivel pelo menor
+   maiorDivisivelporMenor = maiorNumero % menornumero === 0;
+
+   diferenca = maiorNumero - menornumero;
+   //esse retorna o objeto
+
+   return {
+      maiorNumero: maiorNumero,
+      maiorDivisivelporMenor: maiorDivisivelporMenor,
+      diferenca: diferenca
+    }
+
 }
 
 // Exercício 10
 
 function segundoMaiorEMenor(array) {
-   // implemente sua lógica aqui
+
 }
 
 //Exercício 11
 
 function ordenaArray(array) {
-   // implemente sua lógica aqui
+  
 }
 
 // Exercício 12
 
 function filmeFavorito() {
-   // implemente sua lógica aqui
+let nome = "O Diabo Veste Prada"
+let ano = 2006
+let diretor = "David Frankel"
+let atores = ["Meryl Streep", "Anne Hathaway", "Emily Blunt", "Stanley Tucci"]
+
+   return{
+   nome: nome,
+   ano: ano, 
+   diretor: diretor,
+   atores: atores
+   }
 }
 
 // Exercício 13
 
 function imprimeChamada() {
-   // implemente sua lógica aqui
+   let nome = "O Diabo Veste Prada"
+   let ano = 2006
+   let diretor = "David Frankel"
+   let atores = ["Meryl Streep", "Anne Hathaway", "Emily Blunt", "Stanley Tucci"]
+
+   let filmeFavorito = {
+   nome: nome,
+   ano: ano, 
+   diretor: diretor,
+   atores: atores
+   }
+
+   return `Venha assistir ao filme ${filmeFavorito.nome}, de ${filmeFavorito.ano}, dirigido por ${filmeFavorito.diretor} e estrelado por ${filmeFavorito.atores[1]}, ${filmeFavorito.atores[2]}, ${filmeFavorito.atores[3]}.`
 }
 
 // Exercício 14
 
 function criaRetangulo(lado1, lado2) {
-   // implemente sua lógica aqui
+   let perimetro = 2 * (lado1 + lado2)
+   let area = lado1 * lado2
+   const areas = {
+      largura: lado1,
+      altura: lado2,
+      perimetro: perimetro,
+      area: area
+   } 
+   return areas
 }
 
 // Exercício 15
 
 function anonimizaPessoa(pessoa) {
-   // implemente sua lógica aqui
+   return{
+  ...pessoa,
+  nome: "ANÔNIMO"  
+   }
 }
 
 // Exercício 16
@@ -130,31 +203,51 @@ const arrayDePessoas = [
 // Exercício 16, letra A
 
 function maioresDe18(arrayDePessoas) {
-   // implemente sua lógica aqui
+   const maioresDeIdade = arrayDePessoas.filter((maiores) => {
+      return maiores.idade >= 18
+   })
+   return maioresDeIdade
 }
 
 // Exercício 16, letra B
 
 function menoresDe18(arrayDePessoas) {
-   // implemente sua lógica aqui
+   const menoresDeIdade = arrayDePessoas.filter((menores) => {
+      return menores.idade < 18
+   })
+   return menoresDeIdade
 }
 
 // Exercício 17, letra A
 
 function multiplicaArrayPor2(array) {
-   // implemente sua lógica aqui
+   const multPor2 = array.map((numero) => {
+      return numero * 2   
+   })
+   return multPor2
 }
 
 // Exercício 17, letra B
 
 function multiplicaArrayPor2S(array) {
-  // implemente sua lógica aqui
+   const multPor2 = array.map((numero) => {
+      return String(numero * 2)  
+   })
+   return multPor2
 }
 
 // Exercício 17, letra C
 
 function verificaParidade(array) {
-   // implemente sua lógica aqui
+   const multPor2 = array.map((numero) => {
+      if(numero % 2 === 0){
+         return `${numero} é par`
+      }  
+      else{
+         return `${numero} é ímpar`
+      }
+   })
+   return multPor2
 }
 
 // Exercício 18
@@ -170,15 +263,25 @@ const pessoas = [
 
 //Exercício 18, letra A
 
-function retornaPessoasAutorizadas(pessoas) {
-   // implemente sua lógica aqui
+function retornaPessoasAutorizadas() {
+   const pessoasAutorizadas = pessoas.filter((verifica) => {
+      if((verifica.altura >= 1.5) && (verifica.idade > 14) && (verifica.idade < 60)){
+         return verifica
+      }
+   })
+   return pessoasAutorizadas
 }
 
 
 // Exercício 18, letra B
 
-function retornaPessoasNaoAutorizadas(pessoas) {
-   // implemente sua lógica aqui
+function retornaPessoasNaoAutorizadas() {
+   const pessoasNaoAutorizadas = pessoas.filter((verifica) => {
+      if((verifica.altura < 1.5) || (verifica.idade < 14) || (verifica.idade > 60)){
+         return verifica
+      }
+   })
+   return pessoasNaoAutorizadas
 }
 
 //Exercício 19
@@ -190,8 +293,8 @@ const consultas = [
   { nome: "Márcia", genero: "feminino", cancelada: false, dataDaConsulta: "04/11/2019" }
   ]
 
-function retornaEmailConsulta(consultas) {
-  // implemente sua lógica aqui
+function retornaEmailConsulta() {
+  
 }
 
 //Exercício 20
