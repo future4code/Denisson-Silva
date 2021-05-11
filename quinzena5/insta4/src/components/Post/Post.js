@@ -1,14 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import {IconeComContador} from '../IconeComContador/IconeComContador'
+import { IconeComContador } from '../IconeComContador/IconeComContador'
 
 import iconeMarcar from '../../img/bookmark.svg'
 import iconeMarcarPreto from '../../img/bookmark_black.svg'
 import iconeCoracaoBranco from '../../img/favorite-white.svg'
 import iconeCoracaoPreto from '../../img/favorite.svg'
 import iconeComentario from '../../img/comment_icon.svg'
-import {SecaoComentario} from '../SecaoComentario/SecaoComentario'
+import { SecaoComentario } from '../SecaoComentario/SecaoComentario'
 
 const PostContainer = styled.div`
   border: 1px solid gray;
@@ -52,7 +52,25 @@ class Post extends React.Component {
     numeroDescurtidas: 0,
     comentando: false,
     numeroComentarios: 0,
-    marcado: false
+    marcado: false,
+    novoPost: [
+      {
+        nomeUsuario: 'paulinha',
+        fotoUsuario: 'https://picsum.photos/50/50',
+        fotoPost: 'https://picsum.photos/200/150'
+      },
+      {
+        nomeUsuario: 'João',
+        fotoUsuario: 'https://picsum.photos/50/50',
+        fotoPost: 'https://picsum.photos/200/150'
+      },
+      {
+        nomeUsuario: 'Pedro',
+        fotoUsuario: 'https://picsum.photos/50/50',
+        fotoPost: 'https://picsum.photos/200/150'
+      }
+    ]
+
   }
 
   onClickCurtida = () => {
@@ -60,7 +78,7 @@ class Post extends React.Component {
       curtido: true,
       numeroCurtidas: this.state.numeroCurtidas + 1
     })
-    
+
   }
 
   onClickComentario = () => {
@@ -68,11 +86,11 @@ class Post extends React.Component {
       comentando: !this.state.comentando
     })
   }
-  
+
   onClickMarcar = () => {
     this.setState({
       marcado: true
-      
+
     })
   }
 
@@ -86,7 +104,7 @@ class Post extends React.Component {
   render() {
     let iconeMarcado
 
-    if(this.state.marcado) {
+    if (this.state.marcado) {
       iconeMarcado = iconeMarcarPreto
     } else {
       iconeMarcado = iconeMarcar
@@ -94,7 +112,7 @@ class Post extends React.Component {
 
     let iconeCurtida
 
-    if(this.state.curtido) {
+    if (this.state.curtido) {
       iconeCurtida = iconeCoracaoBranco
     } else {
       iconeCurtida = iconeCoracaoPreto
@@ -102,39 +120,51 @@ class Post extends React.Component {
 
     let componenteComentario
 
-    if(this.state.comentando) {
-      componenteComentario = <SecaoComentario aoEnviar={this.aoEnviarComentario}/>
+    if (this.state.comentando) {
+      componenteComentario = <SecaoComentario aoEnviar={this.aoEnviarComentario} />
     }
 
-    return <PostContainer>
-      <PostHeader>
-        <UserPhoto src={this.props.fotoUsuario} alt={'Imagem do usuario'}/>
-        <p>{this.props.nomeUsuario}</p>
 
-        <UserPhoto src={iconeMarcado} alt={'icone marcar'}
-        onClick={this.onClickMarcar}/>
-        
-      </PostHeader>
+    const novoArrayPost = this.state.novoPost.map((postNovo) => {
+      
+    
 
-      <PostPhoto src={this.props.fotoPost} alt={'Imagem do post'}/>
+    return (
+      <PostContainer>
+        <PostHeader>
+          <UserPhoto src={postNovo.fotoUsuario} alt={'Imagem do usuario'} />
+          <p>{postNovo.nomeUsuario}</p>
 
-      <PostFooter>
-        <IconeComContador
-          
-          icone={iconeCurtida}
-          onClickIcone={this.onClickCurtida}
-          valorContador={this.state.numeroCurtidas}
-          
-        />
+          <UserPhoto src={iconeMarcado} alt={'icone marcar'}
+            onClick={this.onClickMarcar} />
 
-        <IconeComContador
-          icone={iconeComentario}
-          onClickIcone={this.onClickComentario}
-          valorContador={this.state.numeroComentarios}
-        />
-      </PostFooter>
-      {componenteComentario}
-    </PostContainer>
+        </PostHeader>
+
+        <PostPhoto src={this.props.fotoPost} alt={'Imagem do post'} />
+
+        <PostFooter>
+          <IconeComContador
+
+            icone={iconeCurtida}
+            onClickIcone={this.onClickCurtida}
+            valorContador={this.state.numeroCurtidas}
+
+          />
+
+          <IconeComContador
+            icone={iconeComentario}
+            onClickIcone={this.onClickComentario}
+            valorContador={this.state.numeroComentarios}
+          />
+        </PostFooter>
+        {componenteComentario}
+      </PostContainer>
+    )
+  })
+
+
+  return(novoArrayPost)
+
   }
 }
 
