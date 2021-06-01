@@ -30,6 +30,7 @@ export default class Criar extends React.Component {
         console.log("foi")
         this.setState({valorInputNome: ""})
         this.setState({valorInputEmail: ""})
+        alert("Criado com Sucesso!!!")
       
       })
       .catch(() => {
@@ -42,8 +43,8 @@ export default class Criar extends React.Component {
         return(
             <div>
           <h2>Criar Usuário</h2>
-          <input type="text" placeholder="Nome" onChange={this.onChangeInputNome}></input>
-          <input type="email" placeholder="Email" onChange={this.onChangeInputEmail}></input>
+          <input type="text" placeholder="Nome" onChange={this.onChangeInputNome} value={this.state.valorInputNome}></input>
+          <input type="email" placeholder="Email" onChange={this.onChangeInputEmail} value={this.state.valorInputEmail}></input>
           <button onClick={this.onEnviaDados}>Criar</button>
         </div>
         )
