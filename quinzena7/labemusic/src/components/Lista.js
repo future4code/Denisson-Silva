@@ -1,24 +1,29 @@
 import React from 'react'
 import styled from "styled-components"
 import axios from 'axios'
+import NovaMusica from './NovaMusica'
 
 
 const ListaContainer = styled.div`
-width: 300px;
+width: 400px;
 height: 75vh;
 display:flex;
 flex-direction: column;
 margin-left: 500px;
 align-items: center;
-
+border: 1px solid black;
 `
 
 const ElementoList = styled.p`
 display: flex;
 justify-content: space-between;
-width: 300px;
+width: 350px;
 padding: 10px;
 border: 1px solid black;
+align-items: center;
+`
+const Button = styled.button`
+height: 30px;
 `
 
 export default class Lista extends React.Component {
@@ -29,6 +34,10 @@ export default class Lista extends React.Component {
     componentDidMount = () => {
     this.pegaUsuarios()
     } 
+
+    irParaMusicas = () => {
+        return <NovaMusica />
+    }
 
     pegaUsuarios = () => {
     axios
@@ -79,7 +88,8 @@ export default class Lista extends React.Component {
           return <ElementoList key={elemento.id}>
                     <p>{elemento.name}</p>
                     
-                    <button onClick={() => this.deleteUser(elemento.id)}>remover</button>
+                    <Button onClick={this.irParaMusicas()}>Ver Detalhes</Button>
+                    <Button onClick={() => this.deleteUser(elemento.id)}>remover</Button>
                  </ElementoList>
         })}
           
