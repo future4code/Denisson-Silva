@@ -3,24 +3,26 @@ import styled from "styled-components"
 import axios from 'axios'
 import Criar from './components/Criar'
 import Lista from './components/Lista'
+import background from './background.png'
 
 
 const Corpo = styled.div`
-display: flex;
-flex-direction: column;
-justify-items: center;
 text-align: center;
 `
 const Header = styled.div`
 display:flex;
 border: 1px solid black;
 justify-content: space-between;
+align-items: center;
+padding: 5px
 `
 const Footer = styled.div`
 border: 1px solid black;
 `
 
-
+const Button = styled.button`
+height: 30px;
+`
 export default class App extends React.Component{
   state = {
     valorTrocaPag: "Ver Playlists"
@@ -54,7 +56,7 @@ export default class App extends React.Component{
       <Corpo>
         <Header>
           <h1>LabeFy</h1>
-          <button onClick={this.onTrocaTela}>{this.state.valorTrocaPag}</button>
+          <Button onClick={this.onTrocaTela}>{this.state.valorTrocaPag}</Button>
         </Header>
         
           {this.renderizaPag()}
