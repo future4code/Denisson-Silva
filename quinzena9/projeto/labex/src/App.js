@@ -1,13 +1,13 @@
 import React from 'react'
-import AccessAlarmsIcon from '@material-ui/icons/AccessAlarms';
+import Router from './routers/Router'
+
 
 
 
 function App() {
   return (
     <div >
-      LabeX
-      <AccessAlarmsIcon/>
+     <Router/>
     </div>
   );
 }
