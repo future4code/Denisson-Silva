@@ -3,9 +3,10 @@ import styled from 'styled-components'
 import axios from 'axios'
 import useForm from "../hooks/useForm"
 import TextField from '@material-ui/core/TextField'
-import Button from '@material-ui/core/Button';
-import MenuItem from '@material-ui/core/MenuItem';
-import { useHistory } from 'react-router';
+import Button from '@material-ui/core/Button'
+import MenuItem from '@material-ui/core/MenuItem'
+import { useHistory } from 'react-router'
+
 
 const Raiz = styled.div`
 text-align: center;
@@ -46,6 +47,7 @@ export default function CreateTripPage () {
         {value: "Plutão"}
     ]
 
+    
     const goToBack = () => {
         history.goBack()
     }
@@ -74,10 +76,13 @@ export default function CreateTripPage () {
             }
           })
           .then((response) => {
-            console.log(response.data);
+            console.log(response.data)
+            
+            alert("Parabéns!!! Você criou sua viajem!!!")
+
           })
           .catch((error) => {
-            console.log("Deu erro: ", error.response);
+            console.log("Deu erro: ", error.response)
           });
 
 
@@ -87,17 +92,17 @@ export default function CreateTripPage () {
 
     return(
         <Raiz>
-            <h1>Criar Viajem</h1>
+            <h1>Criar Viagem</h1>
             
             <FormContainer >
                 <TextField
-                name={"name"}
-                value={form.name}
-                onChange={onChange}
-                label="Nome da Viajem"
-                required
-                pattern={"^.{3,}"}
-                title={"O nome deve ter no mínimo 3 letras"}
+                  name={"name"}
+                  value={form.name}
+                  onChange={onChange}
+                  label="Nome da Viajem"
+                  required
+                  pattern={"^.{3,}"}
+                  title={"O nome deve ter no mínimo 3 letras"}
                 />
                 <TextField 
                     name={"planet"}   
@@ -116,30 +121,30 @@ export default function CreateTripPage () {
                 </TextField>
                 
                 <TextField
-                name={"date"}
-                value={form.date}
-                onChange={onChange}
-                required
-                type={"date"}
+                  name={"date"}
+                  value={form.date}
+                  onChange={onChange}
+                  required
+                  type={"date"}
                 />
 
                 <TextField
-                name={"description"}
-                value={form.description}
-                onChange={onChange}
-                label="Descrição"
-                required
+                  name={"description"}
+                  value={form.description}
+                  onChange={onChange}
+                  label="Descrição"
+                  required
                                
                 />
 
                 <TextField
-                name={"durationInDays"}
-                value={form.durationInDays}
-                onChange={onChange}
-                label="Duração"
-                required
-                type={"number"}
-                min={18}
+                  name={"durationInDays"}
+                  value={form.durationInDays}
+                  onChange={onChange}
+                  label="Duração"
+                  required
+                  type={"number"}
+                  min={18}
                 />
 
                 <Buttons>

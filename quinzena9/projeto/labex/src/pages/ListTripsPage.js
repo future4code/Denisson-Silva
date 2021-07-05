@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
 import { useHistory } from 'react-router-dom'
 import Button from '@material-ui/core/Button';
 import styled from 'styled-components'
@@ -26,16 +27,39 @@ display: flex;
 justify-content: space-around;
 margin-top: 10px;
 `
-const CardViajantes = styled.div`
+const CardViagens = styled.div`
 border: 1px solid black;
-display: flex;
-justify-content: flex-start;
 padding: 12px;
+margin-top: 10px;
+`
+const InfoContainer = styled.div`
+display: flex;
 
+text-align: center;
+align-items: center;
 `
 
 export default function ListTripsPage () {
+    const [viagens, setViagens] = useState([])
     const history = useHistory()
+
+    useEffect(() => {
+        refresh()
+    },[])
+
+    const refresh = () => {
+     axios.get(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/denisson/trips`)
+
+      .then((response) => {
+        setViagens(response.data.trips)
+        
+
+      })
+      .catch((error) => {
+        console.log("Deu erro: ", error.response)
+      });
+
+}
 
     const goToBack = () => {
         history.goBack()
@@ -52,16 +76,21 @@ export default function ListTripsPage () {
                     <Button onClick={goToApplicationForm} variant="contained">Inscrever-se</Button>
                 </Buttons>
 
-                <h1>Lista de Viajens</h1>
-                <CardViajantes>                    
-                    <div>
-                        <p>Nome: </p>
-                        <p>Descrição: </p>
-                        <p>Planeta: </p>                        
-                        <p>Duração: </p>
-                        <p>Data: </p>                       
-                    </div>
-                </CardViajantes>
+                <h1>Lista de Viagens</h1>
+                                    
+                <div>
+                    {viagens.map((viagem) => (
+                        <CardViagens>
+                        <InfoContainer><h3>Nome da Viagem:</h3><p>{viagem.name}</p></InfoContainer>
+                        <InfoContainer><h3>Descrição: </h3><p>{viagem.description}</p></InfoContainer>
+                        <InfoContainer><h3>Planeta: </h3><p>{viagem.planet}</p></InfoContainer>
+                        <InfoContainer><h3>Duração: </h3><p>{viagem.durationInDays} dias</p></InfoContainer>
+                        <InfoContainer><h3>Data: </h3><p>{viagem.date}</p></InfoContainer>
+                        </CardViagens>                           
+                   
+                    ))}            
+                </div>
+                
                 
            
             </FormContainer>
